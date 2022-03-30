@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="45" viewBox="0 0 55 45">
+  <g id="Group_56" data-name="Group 56" transform="translate(-1798 -23)">
+    <rect id="Rectangle_21" data-name="Rectangle 21" width="55" height="45" rx="5" transform="translate(1798 23)" fill="#e4edf2" opacity="0"/>
+    <path id="Icon_material-notifications-none" data-name="Icon material-notifications-none" d="M15.846,27.75a2.469,2.469,0,0,0,2.462-2.462H13.385A2.469,2.469,0,0,0,15.846,27.75Zm7.385-7.385V14.212c0-3.778-2.006-6.942-5.538-7.778V5.6A1.846,1.846,0,0,0,14,5.6v.837c-3.52.837-5.538,3.988-5.538,7.778v6.154L6,22.827v1.231H25.692V22.827ZM20.769,21.6H10.923V14.212c0-3.052,1.858-5.538,4.923-5.538s4.923,2.486,4.923,5.538Z" transform="translate(1810 30.25)" fill="#0f4d78"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.5" cy="3.5" r="3.5" transform="translate(1828 37)" fill="#ed3e43"/>
+  </g>
+</svg>
