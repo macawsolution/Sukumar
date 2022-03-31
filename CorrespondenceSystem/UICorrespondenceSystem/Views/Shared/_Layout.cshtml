@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Correspondence System</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
@@ -36,7 +36,8 @@
         <div class="row navArea">
             <div class="col-md-12">
                 <div class="navLinks">
-                    <button class="mainNav new">New</button>
+                    @*<button class="mainNav new">New</button>*@
+                    @Html.ActionLink("Create", "New", "Home", null, new { @class = "mainNav new newactive" }) 
                     <button class="mainNav all allactive">All Correspondence</button>
                     <button class="mainNav process">In Process</button>
                     <button class="mainNav delayed">Delayed</button>

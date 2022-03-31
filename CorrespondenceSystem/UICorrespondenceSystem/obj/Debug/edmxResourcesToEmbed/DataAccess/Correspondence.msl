@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="COR_DEVModelStoreContainer" CdmEntityContainer="COR_DEVEntities">
+    <EntitySetMapping Name="Correspondences">
+      <EntityTypeMapping TypeName="COR_DEVModel.Correspondence">
+        <MappingFragment StoreEntitySet="Correspondence">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Serial_Number" ColumnName="Serial_Number" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sender_Type" ColumnName="Sender_Type" />
+          <ScalarProperty Name="Sender_Internal_Id" ColumnName="Sender_Internal_Id" />
+          <ScalarProperty Name="Sender_External_Id" ColumnName="Sender_External_Id" />
+          <ScalarProperty Name="Sender_Creation_Date" ColumnName="Sender_Creation_Date" />
+          <ScalarProperty Name="Received_Date" ColumnName="Received_Date" />
+          <ScalarProperty Name="Final_Reply_Date" ColumnName="Final_Reply_Date" />
+          <ScalarProperty Name="Entity_Person_Id" ColumnName="Entity_Person_Id" />
+          <ScalarProperty Name="Correspondence_Type" ColumnName="Correspondence_Type" />
+          <ScalarProperty Name="Expected_Reply_Within_Days" ColumnName="Expected_Reply_Within_Days" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

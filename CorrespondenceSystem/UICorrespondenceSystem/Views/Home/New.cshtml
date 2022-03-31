@@ -1,0 +1,114 @@
+﻿@model UICorrespondenceSystem.Models.Correspondence
+
+@{
+    ViewBag.Title = "New Correspondence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+     
+
+    <div class="row createForm">
+        <div class="col-md-12">
+            <div class="formDesign">
+                <center><b>Enter details to create correspondence</b></center>
+                <hr>
+                <form> 
+                     
+                        @Html.LabelFor(model => model.Serial_Number, htmlAttributes: new { @class = "" })
+                         
+                            @Html.EditorFor(model => model.Serial_Number, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter serial number" } })
+                            @Html.ValidationMessageFor(model => model.Serial_Number, "", new { @class = "text-danger" })
+                         
+                    <div class="row">
+                        <div class="col"> 
+                            @Html.LabelFor(model => model.Correspondence_Date, htmlAttributes: new { @class = "" }) 
+                            @Html.EditorFor(model => model.Correspondence_Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter date" },@type="date" })
+                            @Html.ValidationMessageFor(model => model.Correspondence_Date, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col">
+                            @*<label>Received Date</label>*@
+                            @Html.LabelFor(model => model.Received_Date, htmlAttributes: new { @class = "" }) 
+                            @Html.EditorFor(model => model.Received_Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter date" }, @type = "date" })
+                            @Html.ValidationMessageFor(model => model.Received_Date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row radiobtn">
+                        <div class="col"> 
+                            @Html.RadioButtonFor(m => m.Sender_Type, "0", new { @class = "form-check-input" })
+                            <label class="form-check-label" for="exampleRadios1">External</label>
+                        </div>
+                        <div class="col"> 
+                            @Html.RadioButtonFor(m => m.Sender_Type, "1", new { @class = "form-check-input" })
+                            <label class="form-check-label">Internal</label>
+                        </div>
+                    </div>
+                    <label>Sender-Internal</label>
+                    <input type="text" class="form-control" id="txtOrg" placeholder="Organizational Unit">
+
+                    <label>Sender-External</label>
+                    <input type="text" class="form-control" placeholder="Mention Sender">
+
+                    <div class="form-group">
+                        <label>Responsible - Organisational Unit</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                    <fieldset disabled>
+                        <input type="text" class="form-control" placeholder="Job Title/Name" readonly>
+                    </fieldset>
+                     @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "" }) 
+                     @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter subject" } })
+                            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    <label>Attachments (if any)</label>
+                    <input type="file" class="form-control">
+                    <center><button type="submit" class="globalBtn submitBtn">Submit</button></center>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>    
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>   
+<script>
+    $(document).ready(function () {  
+       $("#txtOrg").autocomplete({  
+           source: function(request,response) {  
+               $.ajax({  
+                   url: "/Home/Index",  
+                   type: "POST",  
+                   dataType: "json",  
+                   data: { Prefix: request.term },  
+                   success: function (data) {  
+                       response($.map(data, function (item) {  
+                           return { label: item.Name, value: item.Name};  
+                       }))  
+  
+                   }  
+               })  
+           },  
+           messages: {  
+               noResults: "", results: ""  
+           }  
+       });  
+   }) 
+</script>
